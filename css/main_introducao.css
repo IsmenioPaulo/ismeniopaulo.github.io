@@ -1,0 +1,67 @@
+.introducao {
+  
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /*Uma coluna Duas colunas*/
+  gap: 100px;
+  align-items: center; /*Alinhar todo conteudo*/
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative; /*Para colocar o detalhe atras do conteudo*/
+}
+
+.introducao h1::before {  /*Colocando o detalhe de tras do texto*/
+  content: "";
+  display: block;
+  width: 130px;
+  height: 110px;
+  background: url('../img/detalhe.svg' ) no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252 ;
+}
+
+/*Responsivo*/
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr; /*A imagem e o texto vao ser proporcionais*/
+    gap: 45px;
+  }
+
+  .introducao h1 {
+    font-size: 2rem;
+  }
+
+  .introducao h1::before {
+    width: 30px;
+    height: 10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 425px) {
+  .introducao {   /*Esta sobrando espaço no texto, para isso vamos, entao colocamos em uma coluna apenas*/
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
